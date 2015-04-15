@@ -12,3 +12,5 @@ class ScribblerIBVO(Scribbler2):
         super(ScribblerIBVO, self).__init__(port, filename, baud) 
         
     
+    def IBVO(self):
+        pass
