@@ -6,8 +6,8 @@ to the ending result. If they are within a certain threshold, it returns success
 """
 from Scribbler2 import Scribbler2
 
-class ScribblerIBVO(Scribbler2):
+class ScribblerIBVS(Scribbler2):
     
     def __init__(self, port, filename, baud=38400):
-        super(ScribblerIBVO, self).__init__(port, filename, baud) 
+        super(ScribblerIBVS, self).__init__(port, filename, baud) 
         
