@@ -8,6 +8,7 @@ from Scribbler2 import Scribbler2
 
 class ScribblerIBVO(Scribbler2):
     
-    def __init___(self):
-        pass
+    def __init__(self, port, filename, baud=38400):
+        super(ScribblerIBVO, self).__init__(port, filename, baud) 
+        
     
