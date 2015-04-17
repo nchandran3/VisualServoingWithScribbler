@@ -81,10 +81,11 @@ def main(args):
 if __name__ == "__main__":
     import sys
     import Square
-    img_path = sys.argv[1]
-    img = cv2.imread(img_path)
-    axis = Square.get_axis(img_path)[0]
-    print Square.axis_length(axis)
-    
+    img_path1 = sys.argv[1]
+    img_path2 = sys.argv[2]
+    startimg = cv2.imread(img_path1)
+    endimg = cv2.imread(img_path2)
+
+    print Square.compare_axes(endimg, startimg, 1)    
     #main(sys.argv[1:])
         

@@ -72,9 +72,6 @@ def get_centroid(square):
     return centroid
 
 def get_axis(img):
-    from glob import glob
-
-    img = cv2.imread(img)
     squares = find_squares(img)
 
     smallest = None
@@ -94,7 +91,7 @@ def get_axis(img):
     ch = 0xFF & cv2.waitKey()
 
     cv2.destroyAllWindows()
-    return line
+    return line[0]
 
 
 def axis_length(axis):
