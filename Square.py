@@ -33,6 +33,18 @@ def find_squares(img):
                         squares.append(cnt)
     return squares
 
+def find_square(img):
+    squares = find_squares(img)
+    
+    smallest = None
+    sarea = 10000000
+    for square in squares:
+        if cv2.contourArea(square) < sarea:
+            smallest = square
+            sarea = cv2.contourArea(square)
+    
+    return smallest
+
 def get_centroid(square):
     # GET LINES
     i = 0
@@ -83,3 +95,8 @@ def get_axis(img):
 
     cv2.destroyAllWindows()
     return line
+
+
+
+def get_ratio_LR(square):
+    pass

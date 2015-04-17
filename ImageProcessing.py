@@ -81,6 +81,9 @@ def main(args):
 if __name__ == "__main__":
     import sys
     import Square
-    print Square.get_axis(sys.argv[1])
+    img = cv2.imread(sys.argv[1])
+    print Square.find_squares(img)
+    #print Square.get_axis(img)
+    
     #main(sys.argv[1:])
         
