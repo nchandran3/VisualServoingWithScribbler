@@ -86,6 +86,6 @@ if __name__ == "__main__":
     startimg = cv2.imread(img_path1)
     endimg = cv2.imread(img_path2)
 
-    print Square.compare_axes(endimg, startimg, 1)    
+    print Square.compare_axes(startimg, endimg, 1)    
     #main(sys.argv[1:])
         

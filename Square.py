@@ -101,7 +101,29 @@ def axis_length(axis):
     return ((x2-x1)**2 + (y2-y1)**2)**.5
     
 def get_ratio_LR(square):
-    pass
+    # GET LINES
+    i = 0
+    lines = []
+    for i in range(len(square)-1):
+        lines.append(((square[i][0], square[i][1]), (square[i+1][0], square[i+1][1])))
+    lines.append(((square[0][0], square[0][1]),(square[len(square)-1][0], square[len(square)-1][1])))
+
+    verts = []
+    for line in lines:
+        if abs(line[0][0] - line[1][0]) < abs(line[0][1] - line[1][1]):
+            verts.append(line)
+
+    if verts[0][0][0] < verts[1][0][0]:
+        left = verts[0]
+        right = verts[1]
+    else:
+        left = verts[1]
+        right = verts[0]
+
+    ld = math.sqrt((left[1][0] - left[0][0])**2 + (left[1][1] - left[0][1])**2)
+    rd = math.sqrt((right[1][0] - right[0][0])**2 + (right[1][1] - right[0][1])**2)
+
+    return ld/rd
 
 """
 Returns 1 if you should move forward (end axis is larger than start axis), -1 if you should move backwards (end axis is smaller than start axis)
