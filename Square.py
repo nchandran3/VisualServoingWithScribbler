@@ -97,6 +97,14 @@ def get_axis(img):
     return line
 
 
-
+def axis_length(axis):
+    x1, y1, x2, y2 = axis[0], axis[1], axis[2], axis[3]
+    
+    return ((x2-x1)**2 + (y2-y1)**2)**.5
+    
 def get_ratio_LR(square):
     pass
+
+
+def compare_axes(startimg, endimg):
+    
