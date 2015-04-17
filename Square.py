@@ -105,6 +105,22 @@ def axis_length(axis):
 def get_ratio_LR(square):
     pass
 
-
-def compare_axes(startimg, endimg):
+"""
+Returns 1 if you should move forward (end axis is larger than start axis), -1 if you should move backwards (end axis is smaller than start axis)
+or 0 if you are within the acceptable threshold.
+"""
+def compare_axes(startimg, endimg, threshold):
+    axis_start = get_axis(startimg)
+    axis_end = get_axis(endimg)
     
+    axis_start_len = axis_length(axis_start)
+    axis_end_len = axis_length(axis_end)
+    
+    result = axis_end_len - axis_start_len
+    
+    if abs(result) < threshold:
+        return 0
+    elif result > threshold: 
+        return 1
+    else:
+        return -1
