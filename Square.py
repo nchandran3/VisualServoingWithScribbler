@@ -98,7 +98,8 @@ def get_axis(img):
 
 
 def axis_length(axis):
-    x1, y1, x2, y2 = axis[0], axis[1], axis[2], axis[3]
+    x1, y1 = axis[0]
+    x2, y2 = axis[1]
     
     return ((x2-x1)**2 + (y2-y1)**2)**.5
     
